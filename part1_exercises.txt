@@ -1,0 +1,42 @@
+1.11
+PS C:\ohjelmointi\docker> docker ps -a                                                                                                           CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
+bab549500616        nginx               "nginx -g 'daemon of…"   27 seconds ago      Exited (0) 11 seconds ago                       wonderful_cray
+1a6dfec6c9fa        nginx               "nginx -g 'daemon of…"   30 seconds ago      Up 29 seconds               80/tcp              cocky_sutherland
+998e2a2551b3        nginx               "nginx -g 'daemon of…"   35 seconds ago      Exited (0) 11 seconds ago                       eloquent_cray
+
+1.12
+PS C:\ohjelmointi\docker> docker ps -a
+CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
+PS C:\ohjelmointi\docker>
+
+PS C:\ohjelmointi\docker> docker images
+REPOSITORY          TAG                 IMAGE ID            CREATED             SIZE
+PS C:\ohjelmointi\docker>
+
+1.3
+This is the readme, use input "basics" to complete this exercise.
+Give me the password: basics
+You found the correct password. Secret message is:
+"This is the secret message"
+
+1.4
+docker run -d devopsdockeruh/exec_bash_exercise
+docker ps -a
+docker exec -it 3d bash
+tail -f ./logs.txt
+root@3df94bcf9562:/usr/app# tail -f ./logs.txt
+Sat, 14 Sep 2019 01:33:29 GMT
+Secret message is:
+"Docker is easy"
+exit
+docker kill 3d
+docker rm 3d
+
+1.5
+docker run --rm -it --name exer1_5 ubuntu:16.04 sh -c 'apt-get update ;apt-get -y install curl; echo Input website:; read website; echo Searching..; sleep 1; curl http://$website;'
+
+#own notes:
+following exits on windows... so docker exec --it way2_1_5 bash is not possible
+docker run -it --name way2_1_5 ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+
+

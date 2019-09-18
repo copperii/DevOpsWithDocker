@@ -1,0 +1,5 @@
+make Dockerfile
+(CMD ["/bin/bash"] shows which parameters to run)
+docker build -t docker-clock .
+docker run docker-clock 
+
