@@ -1,10 +1,10 @@
-1.11
+1.1
 PS C:\ohjelmointi\docker> docker ps -a                                                                                                           CONTAINER ID        IMAGE               COMMAND                  CREATED             STATUS                      PORTS               NAMES
 bab549500616        nginx               "nginx -g 'daemon of…"   27 seconds ago      Exited (0) 11 seconds ago                       wonderful_cray
 1a6dfec6c9fa        nginx               "nginx -g 'daemon of…"   30 seconds ago      Up 29 seconds               80/tcp              cocky_sutherland
 998e2a2551b3        nginx               "nginx -g 'daemon of…"   35 seconds ago      Exited (0) 11 seconds ago                       eloquent_cray
 
-1.12
+1.1
 PS C:\ohjelmointi\docker> docker ps -a
 CONTAINER ID        IMAGE               COMMAND             CREATED             STATUS              PORTS               NAMES
 PS C:\ohjelmointi\docker>
@@ -38,5 +38,24 @@ docker run --rm -it --name exer1_5 ubuntu:16.04 sh -c 'apt-get update ;apt-get -
 #own notes:
 following exits on windows... so docker exec --it way2_1_5 bash is not possible
 docker run -it --name way2_1_5 ubuntu sh -c 'echo "Input website:"; read website; echo "Searching.."; sleep 1; curl http://$website;'
+
+1.8
+#this downloaded the image, writes log as is
+docker run -it devopsdockeruh/first_volume_exercise 
+# Did not create automatically, so
+touch c:\test\logs.txt
+docker run -v c:\test\logs.txt:/usr/app/logs.txt devopsdockeruh/first_volume_exercise
+Secret message is:
+"Volume bind mount is easy"
+
+1.9
+docker run -p 1111:80 devopsdockeruh/ports_exercise
+http://localhost:1111
+Ports configured correctly!!
+
+1.12
+you can pass environment values as below, or add them to dockerfile
+docker run -v c:\test\serverlogs.txt:/backend/logs.txt -p 8000:8000 -d --name ville -e FRONT_URL="http://localhost:5000" myfirstbackend 
+docker run -d --name kalle  -e API_URL="http://localhost:8000" -p 5000:5000 myfirstnode
 
 

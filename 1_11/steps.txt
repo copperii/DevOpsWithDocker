@@ -1,0 +1,9 @@
+//https://nodejs.org/de/docs/guides/nodejs-docker-webapp/
+# this save build time
+
+docker build -t myfirstbackend .
+//docker run -p 8000:8000 -d myfirstbackend --name ville
+http://localhost:8000/
+
+touch c:\test\serverlogs.txt
+docker run -v c:\test\serverlogs.txt:/backend/logs.txt -p 8000:8000 -d --name ville -e FRONT_URL="http://localhost:5000" myfirstbackend 

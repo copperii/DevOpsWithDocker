@@ -1,0 +1,12 @@
+FROM node:10
+
+WORKDIR /backend
+copy backend /backend
+
+RUN npm install
+
+ENV LC_ALL=C.UTF-8 
+EXPOSE 8000
+
+CMD [ "npm", "start" ]
+#CMD [ "node", "server.js" ]
