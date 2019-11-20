@@ -1,0 +1,9 @@
+I created Anaconda environment from image docker pull continuumio/anaconda3
+
+You can run Python in it.
+
+docker build -t anaconda3 .
+
+docker tag anaconda3 copperi/anaconda3
+docker login
+docker push copperi/anaconda3

@@ -1,0 +1,12 @@
+install heroku cli
+heroku create copperi-docker116
+
+https://copperi-docker116.herokuapp.com/ | https://git.heroku.com/copperi-docker116.git
+
+docker pull devopsdockeruh/heroku-example
+heroku login
+docker ps
+heroku container:login
+docker tag devopsdockeruh/heroku-example registry.heroku.com/copperi-docker116/web
+docker push registry.heroku.com/copperi-docker116/web
+heroku container:release -a copperi-docker116 web

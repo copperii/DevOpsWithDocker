@@ -1,5 +1,6 @@
 docker build -t exercise_1_14 .
-change Gemfile
-ruby '2.6.0' -> ruby '2.6.4'
+#reverting back
+#change Gemfile
+#ruby '2.6.0' -> ruby '2.6.4'
 docker run -p 3000:3000 --name janne exercise_1_14
 http://localhost:3000
