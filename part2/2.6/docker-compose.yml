@@ -1,0 +1,38 @@
+version: '3.7'  
+
+services: 
+  backend: 
+    image: myfirstbackend
+    environment:
+      - LC_ALL=C.UTF-8
+      - FRONT_URL=http://localhost:5000
+      - REDIS=redis
+      - DB_USERNAME=firstuser
+      - DB_PASSWORD=firstpwd
+      - DB_NAME=firstdb
+      - DB_HOST=postgres
+    ports: 
+      - 8000:8000
+    depends_on:
+      - postgres
+      - redis
+
+  frontend:
+    image: myfirstnode
+    environment:
+      - LC_ALL=C.UTF-8
+      - API_URL=http://localhost:8000
+    ports:
+      - 5000:5000
+
+  redis:
+    image: redis
+ 
+  postgres:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=firstuser
+      - POSTGRES_PASSWORD=firstpwd
+      - POSTGRES_DB=firstdb
+    container_name: course-postgres

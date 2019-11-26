@@ -1,0 +1,64 @@
+version: '3.7'  
+
+
+services: 
+
+  nginx:
+    image: nginx
+    volumes:
+      - ./nginx.conf:/etc/nginx/nginx.conf
+    ports:
+      - 80:80
+    depends_on:
+      - frontend
+      - backend
+
+  backend: 
+    image: myfirstbackend
+    environment:
+      - LC_ALL=C.UTF-8
+      - FRONT_URL=http://localhost
+      - REDIS=redis
+      - DB_USERNAME=firstuser
+      - DB_PASSWORD=firstpwd
+      - DB_NAME=firstdb
+      - DB_HOST=postgres
+    ports:
+      - 8000:8000
+    depends_on:
+      - postgres
+      - redis
+
+  frontend:
+    image: myfirstnode
+    environment:
+      - LC_ALL=C.UTF-8
+      - API_URL=http://localhost/api
+    ports:
+      - 5000:5000
+
+  redis:
+    image: redis
+    
+    container_name: course-redis
+ 
+  postgres:
+    image: postgres
+    restart: unless-stopped
+    environment:
+      - POSTGRES_USER=firstuser
+      - POSTGRES_PASSWORD=firstpwd
+      - POSTGRES_DB=firstdb
+    container_name: course-postgres
+    volumes:
+      - database:/var/lib/postgresql/data
+
+# create manually: docker volume create --name=database
+
+volumes:
+  database:
+    external: true
+  
+
+
+    

@@ -1,0 +1,13 @@
+version: '3.7' 
+
+services: 
+    first_volume_exercise:  
+      image: devopsdockeruh/first_volume_exercise
+      build: .
+      volumes:
+        - type: bind
+          source: c:\test\log21.txt
+          target: /usr/app/logs.txt
+      container_name: first_volume_exercise
+      
+      
