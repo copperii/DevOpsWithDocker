@@ -1,3 +1,0 @@
-docker build -t myfirstnode .
-docker run -d --name kalle -p 5000:5000 myfirstnode
-http://localhost:5000/

@@ -1,0 +1,6 @@
+docker images myf*
+before:
+myfirstnode           latest              307c345a2e54        2 days ago          635MB
+
+after:
+myfirstnode           latest              aec8ab41f8fc        2 days ago          251MB

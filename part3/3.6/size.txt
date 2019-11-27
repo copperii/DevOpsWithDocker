@@ -1,0 +1,7 @@
+before:
+curler                                      latest              62c39407f606        2 months ago        163MB
+
+after
+curler                                      latest              7c7bfa576c2d        2 days ago          5.69MB
+
+

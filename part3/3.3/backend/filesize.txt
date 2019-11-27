@@ -1,0 +1,9 @@
+docker images myf*
+REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
+myfirstbackend        latest              f268d01735d3        2 months ago        962MB
+
+
+optimizing myfirstbackend ...
+myfirstbackend        latest              0bc819f59ac1        41 hours ago        904MB
+
+

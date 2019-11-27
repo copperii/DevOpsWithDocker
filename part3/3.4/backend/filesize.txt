@@ -1,0 +1,6 @@
+docker images myf*
+before:
+myfirstbackend        latest              46704bed99e5        2 days ago          1.01GB
+
+after:
+myfirstbackend        latest              2a7a752b3735        2 days ago          150MB

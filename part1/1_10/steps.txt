@@ -1,0 +1,12 @@
+docker build -t myfirstnode .
+
+part 3.1
+PS C:\ohjelmointi\DevOpsWithDocker\part3\3.1\frontend> docker images myf*
+REPOSITORY            TAG                 IMAGE ID            CREATED             SIZE
+myfirstbackend        latest              f268d01735d3        2 months ago        962MB
+myfirstnode           latest              410709216b08        2 months ago        456MB
+myfirst-pluschanges   latest              22e4e52d859d        2 months ago        153MB
+myfirst               latest              3990135ecf2d        2 months ago        153MB
+
+optimizing myfirstnode ...
+myfirstnode           latest              ae6ab484eb9b        41 hours ago        273MB
